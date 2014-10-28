@@ -54,6 +54,7 @@ void init(){
     glLightfv(GL_LIGHT1, GL_AMBIENT, LightAmbient);  // add lighting. (ambient)
     glLightfv(GL_LIGHT1, GL_DIFFUSE, LightDiffuse);  // add lighting. (diffuse).
     glLightfv(GL_LIGHT1, GL_POSITION,LightPosition); // set light position.
+    glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT1);                             // turn light 1 on.
 }
 
