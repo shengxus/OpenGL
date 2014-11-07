@@ -2,8 +2,10 @@
 // add definition here
 #ifndef GRASS_H
 #define GRASS_H
-class Grass{
+
+#include "Object.h"
+class Grass:public Object{
 public:
-	void render();
+	virtual void render();
 };
 #endif
