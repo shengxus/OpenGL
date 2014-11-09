@@ -15,10 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\include\Grass.h">
+    <ClInclude Include="src\incl\Object.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\Tree.h">
+    <ClInclude Include="src\incl\Grass.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Tree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Sky.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Terrain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Global.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -30,6 +45,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\Tree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Terrain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sky.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\incl\Camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
