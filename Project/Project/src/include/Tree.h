@@ -3,10 +3,8 @@
 
 #ifndef TREE_H
 #define TREE_H
-
-#include "Object.h"
-class Tree:public Object{
+class Tree{
 public:
-	virtual void render();
+	void render();
 };
 #endif
