@@ -11,3 +11,5 @@ Don't need to consider the light at first.
 
 the content of Demo.cpp is the same as the first sample, and you can use it to test your result.
 
+If you have LNK1104 error: can't open "SOIL.lib", please reset the linked library path in the following way: project->XXX Properties->linker->general->additional library directory, select the lib folder in the project.
+
