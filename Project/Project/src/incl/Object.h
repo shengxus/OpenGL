@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #ifndef OBJECT_H
 #define OBJECT_H
 
@@ -16,12 +15,4 @@ public:
 	void loadTexture(char*);
 	void bindTexture(int index=0);
 };
-=======
-#ifndef OBJECT_H
-#define OBJECT_H
-class Object{
-public:
-	virtual void render(){};
-};
->>>>>>> parent of 8eeb054... Add sky
 #endif
