@@ -10,4 +10,7 @@ Grass.h, Grass.cpp: Madhuri Madhusudan
 Don't need to consider the light at first.
 
 the content of Demo.cpp is the same as the first sample, and you can use it to test your result.
+<<<<<<< HEAD
 
+=======
+>>>>>>> parent of 8eeb054... Add sky
