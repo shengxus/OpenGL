@@ -1,7 +1,7 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include <gl/glut.h>
+#include "glut.h"
 
 #define TEX_NUM_MAX 5
 

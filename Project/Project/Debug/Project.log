@@ -1,32 +1,23 @@
-﻿生成启动时间为 11/9/2014 6:40:37 PM。
-     1>项目“C:\Users\sun\Desktop\OpenGL\Project\Project\Project.vcxproj”在节点 2 上(build 个目标)。
-       项目文件包含 ToolsVersion="12.0"。此工具集可能未知或缺失(您可以通过安装相应版本的 MSBuild 来解决该问题)，或者该生成因策略原因已被强制更改为特殊 ToolsVersion。将此项目视作具有 ToolsVersion="4.0"。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkId=291333。
-     1>InitializeBuildStatus:
-         正在创建“Debug\Project.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
-       ClCompile:
-         所有输出均为最新。
-       ManifestResourceCompile:
-         所有输出均为最新。
-       Link:
-         D:\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\sun\Desktop\OpenGL\Project\Debug\Project.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib glu32.lib glut32.lib SOIL.lib objParser.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Project.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\sun\Desktop\OpenGL\Project\Debug\Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\sun\Desktop\OpenGL\Project\Debug\Project.lib" /MACHINE:X86 Debug\Project.exe.embed.manifest.res
-         Debug\Demo.obj
-         Debug\Grass.obj
-         Debug\Camera.obj
-         Debug\Object.obj
-         Debug\Sky.obj
-         Debug\Terrain.obj
-         Debug\Tree.obj
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Project.exe.embed.manifest" /manifest Debug\Project.exe.intermediate.manifest
-         所有输出均为最新。
-       LinkEmbedManifest:
-         所有输出均为最新。
-         Project.vcxproj -> C:\Users\sun\Desktop\OpenGL\Project\Debug\Project.exe
-       FinalizeBuildStatus:
-         正在删除文件“Debug\Project.unsuccessfulbuild”。
-         正在对“Debug\Project.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\Users\sun\Desktop\OpenGL\Project\Project\Project.vcxproj”(build 个目标)的操作。
+﻿生成启动时间为 11/13/2014 9:31:43 PM。
+项目“\\psf\Home\Desktop\Project\OpenGL\Project\Project\Project.vcxproj”在节点 2 上(Build 个目标)。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I\\psf\Home\Desktop\Project\Project\Project\src\include /ZI /nologo /W3 /WX- /Od /Oy- /D GLUT_BUILDING_LIB /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\incl\Camera.cpp
+  Camera.cpp
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\psf\Home\Desktop\Project\OpenGL\Project\Debug\Project.exe" /INCREMENTAL /NOLOGO /LIBPATH:\\psf\Home\Desktop\Project\Project\Project\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib opengl32.lib glu32.lib glut32.lib SOIL.lib objParser.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\psf\Home\Desktop\Project\OpenGL\Project\Debug\Project.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\psf\Home\Desktop\Project\OpenGL\Project\Debug\Project.lib" /MACHINE:X86 Debug\Demo.obj
+  Debug\Grass.obj
+  Debug\Camera.obj
+  Debug\Object.obj
+  Debug\Sky.obj
+  Debug\Terrain.obj
+  Debug\Tree.obj
+SOIL.lib(image_DXT.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOIL.lib(image_DXT.obj)”或在“\\psf\Home\Desktop\Project\OpenGL\Project\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOIL.lib(image_helper.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOIL.lib(image_helper.obj)”或在“\\psf\Home\Desktop\Project\OpenGL\Project\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOIL.lib(SOIL.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOIL.lib(SOIL.obj)”或在“\\psf\Home\Desktop\Project\OpenGL\Project\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: 未找到 PDB“vc100.pdb”(使用“SOIL.lib(stb_image_aug.obj)”或在“\\psf\Home\Desktop\Project\OpenGL\Project\Debug\vc100.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  Project.vcxproj -> \\psf\Home\Desktop\Project\OpenGL\Project\Debug\Project.exe
+已完成生成项目“\\psf\Home\Desktop\Project\OpenGL\Project\Project\Project.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.25
+已用时间 00:00:01.07
