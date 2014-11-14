@@ -1,0 +1,15 @@
+﻿生成启动时间为 11/13/2014 9:09:33 PM。
+项目“\\psf\Home\Desktop\Project\OpenGL\Tree\Tree\Tree.vcxproj”在节点 2 上(Build 个目标)。
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+  main.cpp
+\\psf\home\desktop\project\opengl\tree\tree\main.cpp(65): warning C4018: “<”: 有符号/无符号不匹配
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"\\psf\Home\Desktop\Project\OpenGL\Tree\Debug\Tree.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib OBJParser.lib SOIL.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"\\psf\Home\Desktop\Project\OpenGL\Tree\Debug\Tree.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"\\psf\Home\Desktop\Project\OpenGL\Tree\Debug\Tree.lib" /MACHINE:X86 Debug\main.obj
+OBJParser.lib(OBJParser.obj) : warning LNK4099: 
+  Tree.vcxproj -> \\psf\Home\Desktop\Project\OpenGL\Tree\Debug\Tree.exe
+已完成生成项目“\\psf\Home\Desktop\Project\OpenGL\Tree\Tree\Tree.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.40
