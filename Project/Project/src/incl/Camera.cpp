@@ -1,5 +1,5 @@
 #include "Camera.h"
-#include <gl\glut.h>
+#include "glut.h"
 #include <cstring>
 #include <cmath>
 
