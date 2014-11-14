@@ -13,20 +13,16 @@
   <ItemGroup>
     <ClInclude Include="src\incl\Camera.h" />
     <ClInclude Include="src\incl\Global.h" />
-    <ClInclude Include="src\incl\Grass.h" />
     <ClInclude Include="src\incl\Object.h" />
     <ClInclude Include="src\incl\Sky.h" />
     <ClInclude Include="src\incl\Terrain.h" />
-    <ClInclude Include="src\incl\Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Demo.cpp" />
-    <ClCompile Include="src\Grass.cpp" />
     <ClCompile Include="src\incl\Camera.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Sky.cpp" />
     <ClCompile Include="src\Terrain.cpp" />
-    <ClCompile Include="src\Tree.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{381510B4-B945-4840-9B65-8B701F6AFF2F}</ProjectGuid>
