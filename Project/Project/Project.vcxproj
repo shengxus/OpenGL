@@ -12,20 +12,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\incl\Camera.h" />
+    <ClInclude Include="src\incl\fonts.h" />
     <ClInclude Include="src\incl\Global.h" />
     <ClInclude Include="src\incl\Grass.h" />
+    <ClInclude Include="src\incl\Billboards.h" />
+    <ClInclude Include="src\incl\maths.h" />
     <ClInclude Include="src\incl\Object.h" />
     <ClInclude Include="src\incl\Sky.h" />
     <ClInclude Include="src\incl\Terrain.h" />
+    <ClInclude Include="src\incl\tga.h" />
     <ClInclude Include="src\incl\Tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Demo.cpp" />
+    <ClCompile Include="src\fonts.cpp" />
     <ClCompile Include="src\Grass.cpp" />
     <ClCompile Include="src\incl\Camera.cpp" />
+    <ClCompile Include="src\Billboards.cpp" />
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Sky.cpp" />
     <ClCompile Include="src\Terrain.cpp" />
+    <ClCompile Include="src\tga.cpp" />
     <ClCompile Include="src\Tree.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -37,7 +44,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -70,12 +77,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>GLUT_BUILDING_LIB</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>\\psf\Home\Desktop\Project\Project\Project\src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>\\psf\Home\Desktop\Project\Project\Project\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;opengl32.lib;glu32.lib;glut32.lib;SOIL.lib;objParser.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

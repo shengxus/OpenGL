@@ -39,7 +39,7 @@ void Sky::generateDome(){
 		}
 	}
 
-	// Fix the problem at the seam
+	//// Fix the problem at the seam
 	for (int i = 0; i < vNum - 3; i++){
 		fixSeam(vertices[i], vertices[i + 1]);
 		fixSeam(vertices[i], vertices[i + 2]);
@@ -58,4 +58,5 @@ void Sky::render(){
 	}
 	glEnd();
 	glPopMatrix();
+	glBindTexture(GL_TEXTURE_2D,0);
 }

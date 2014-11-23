@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\incl\Camera.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\incl\Global.h">
+    <ClInclude Include="src\incl\Object.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\incl\Grass.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\incl\Object.h">
+    <ClInclude Include="src\incl\Tree.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\incl\Sky.h">
@@ -33,7 +30,22 @@
     <ClInclude Include="src\incl\Terrain.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\incl\Tree.h">
+    <ClInclude Include="src\incl\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Global.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\fonts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\maths.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\tga.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\incl\Billboards.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,19 +56,28 @@
     <ClCompile Include="src\Grass.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Object.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Sky.cpp">
+    <ClCompile Include="src\Tree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\Terrain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\Tree.cpp">
+    <ClCompile Include="src\Sky.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Object.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\incl\Camera.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fonts.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tga.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Billboards.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
