@@ -15,8 +15,10 @@
     <ClInclude Include="src\incl\Global.h" />
     <ClInclude Include="src\incl\Object.h" />
     <ClInclude Include="src\incl\OBJParser.h" />
+    <ClInclude Include="src\incl\Sky.h" />
     <ClInclude Include="src\incl\SOIL.h" />
     <ClInclude Include="src\incl\Terrain.h" />
+    <ClInclude Include="src\Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Camera.cpp" />
@@ -24,6 +26,7 @@
     <ClCompile Include="src\Object.cpp" />
     <ClCompile Include="src\Sky.cpp" />
     <ClCompile Include="src\Terrain.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{381510B4-B945-4840-9B65-8B701F6AFF2F}</ProjectGuid>

@@ -2,11 +2,13 @@
 #include "incl\Sky.h"
 #include "incl\Camera.h"
 #include "incl\Terrain.h"
+#include "incl\Timer.h"
 using namespace std;
 
 Camera camera;
 Sky sky;
 Terrain terrain;
+Timer timer;
 
 float cameraParam[9] = {
 	0, 0, 0,
@@ -15,16 +17,13 @@ float cameraParam[9] = {
 };
 
 void init(){
-	camera.initCamera(cameraParam, cameraParam+3, cameraParam+6, 60);
+	camera.initCamera(cameraParam, cameraParam+3, 60);
 	// clean the screen
 	glClearColor(0, 0, 0, 0);
 	// choose the shader type: GL_SMOOTH or GL_FLAT
 	glShadeModel(GL_SMOOTH);
 	// best perspective correction
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-	glEnable(GL_DEPTH_TEST);
-	// z-buffer type
-	glDepthFunc(GL_LEQUAL);
 	glEnable(GL_TEXTURE_2D);
 	// choose the texture interpolation type
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -41,7 +40,7 @@ void init(){
 }
 
 void display(){
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
 	camera.setCamera();
 	sky.render();
@@ -51,11 +50,16 @@ void display(){
 	terrain.tessellate(camera);
 	terrain.render();
 	glPopMatrix();
+	//timer.showTime(camera.getScreenWidth(), camera.getScreenHeight());
 	glutSwapBuffers();
 }
 
-void reshape(int w, int h)
-{
+void reshape(int w, int h) {
+	if (h == 0)
+		h = 1;
+	if (w == 0)
+		w = 1;
+	camera.setScreenSize(w, h);
 	glViewport(0, 0, (GLsizei)w, (GLsizei)h);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
@@ -64,28 +68,22 @@ void reshape(int w, int h)
 	glLoadIdentity();
 }
 
-void processNormalKeys(unsigned char key, int x, int y)
-{
-	if (key == 27)
-		exit(0);
-	if (key == 'i')			// move forward
-		camera.move(0, 0, -5);
-	if (key == 'k')			// move backward
-		camera.move(0, 0, 5);
-	if (key == 'j')			// move left
-		camera.move(-5, 0, 0);
-	if (key == 'l')			// move right
-		camera.move(5, 0, 0);
-	if (key == 'w')			// raise head
-		camera.turn(X, 1);
-	if (key == 's')			// bow head
-		camera.turn(X, -1);
-	if (key == 'a')			// turn left
-		camera.turn(Y, 1);
-	if (key == 'd')			// turn right
-		camera.turn(Y, -1);
+void pressKey(int key, int x1, int y1) {
+
+	switch (key) {
+	case GLUT_KEY_LEFT:    camera.turn(Y, -1); break;
+	case GLUT_KEY_RIGHT:   camera.turn(Y, 1);  break;
+	case GLUT_KEY_UP:      camera.move(1);     break;
+	case GLUT_KEY_DOWN:    camera.move(-1);    break;
+	case GLUT_KEY_F1:      camera.turn(X, 1);  break;
+	case GLUT_KEY_F2:      camera.turn(X, -1); break;
+	}
 }
 
+void processNormalKeys(unsigned char key, int x, int y) {
+	if (key == 27)
+		exit(0);
+}
 
 void idle(void){
 	glutPostRedisplay();
@@ -94,15 +92,15 @@ void idle(void){
 int main(int argc, char *argv[]){
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
-	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Demo");
+	glutInitWindowSize(640, 360);
+	glutCreateWindow("Team Shadows - Project");
 	init();
 	glutDisplayFunc(display);
 	glutReshapeFunc(reshape);
 	glutIdleFunc(idle);
+	glutSpecialFunc(pressKey);
 	glutKeyboardFunc(processNormalKeys);
 	glutMainLoop();
 	return 0;
 }
-

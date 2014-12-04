@@ -45,7 +45,7 @@ public:
 	// The recursive half of the Patch Class
 	void split(TriTreeNode *tri);
 	void recursTessellate(TriTreeNode *tri, int leftX, int leftY, int rightX, int rightY, int apexX, int apexY, int node, const Camera &);
-	void recursRender(TriTreeNode *tri, int leftX, int leftY, int rightX, int rightY, int apexX, int apexY);
+	void recursRender(TriTreeNode *tri, int leftX, int leftY, int rightX, int rightY, int apexX, int apexY, int type);
 	unsigned char recursComputeVariance(int leftX, int leftY, int rightX, int rightY,
 		int apexX, int apexY, int node);
 };

@@ -5,6 +5,8 @@
 #include <gl\glut.h>
 #include "incl\Global.h"
 
+#define LEFT 0
+#define RIGHT 1
 using namespace std;
 
 static int frameVar = 50;
@@ -163,12 +165,12 @@ void Patch::computeVariance() {
 }
 
 void Patch::recursRender(TriTreeNode *tri, int leftX, int leftY, int rightX, 
-	int rightY, int apexX, int apexY){
+	int rightY, int apexX, int apexY, int type){
 	if (tri->LeftChild)	{	// All non-leaf nodes have both children, so just check for one
 		int centerX = (leftX + rightX) >> 1;	// Compute X coordinate of center of Hypotenuse
 		int centerY = (leftY + rightY) >> 1;	// Compute Y coord...
-		recursRender(tri->LeftChild, apexX, apexY, leftX, leftY, centerX, centerY);
-		recursRender(tri->RightChild, rightX, rightY, apexX, apexY, centerX, centerY);
+		recursRender(tri->LeftChild, apexX, apexY, leftX, leftY, centerX, centerY, LEFT);
+		recursRender(tri->RightChild, rightX, rightY, apexX, apexY, centerX, centerY, RIGHT);
 	}
 	else {									// A leaf node!  Output a triangle to be rendered.
 		// Actual number of rendered triangles...
@@ -177,17 +179,24 @@ void Patch::recursRender(TriTreeNode *tri, int leftX, int leftY, int rightX,
 		GLfloat rightZ = heightMap[(rightY*MAP_SIZE) + rightX];
 		GLfloat apexZ = heightMap[(apexY *MAP_SIZE) + apexX];
 
-		// Perform polygon coloring based on a height sample
-		GLfloat terrainLen = PATCH_SIZE;
-		glTexCoord2f((GLfloat)leftX / terrainLen, (GLfloat)leftY / terrainLen);
+		if (type == LEFT)
+			glTexCoord2f(0, 1);
+		else
+			glTexCoord2f(1, 0);
 		// Output the LEFT VERTEX for the triangle
 		glVertex3f((GLfloat)leftX, (GLfloat)leftZ, (GLfloat)leftY);
 
-		glTexCoord2f((GLfloat)rightX / terrainLen, (GLfloat)rightY / terrainLen);
+		if (type == LEFT)
+			glTexCoord2f(1, 0);
+		else
+			glTexCoord2f(0, 1);
 		// Output the RIGHT VERTEX for the triangle
 		glVertex3f((GLfloat)rightX, (GLfloat)rightZ, (GLfloat)rightY);
 
-		glTexCoord2f((GLfloat)apexX / terrainLen, (GLfloat)apexZ / terrainLen);
+		if (type == LEFT)
+			glTexCoord2f(0, 0);
+		else
+			glTexCoord2f(1, 1);
 		// Output the APEX VERTEX for the triangle
 		glVertex3f((GLfloat)apexX, (GLfloat)apexZ, (GLfloat)apexY);
 	}
@@ -199,8 +208,8 @@ void Patch::render() {
 	// Translate the patch to the proper world coordinates
 	glTranslatef((GLfloat)offsetX, 0, (GLfloat)offsetY);
 	glBegin(GL_TRIANGLES);
-	recursRender(&baseLeft, 0, PATCH_SIZE, PATCH_SIZE, 0, 0, 0);
-	recursRender(&baseRight, PATCH_SIZE, 0, 0, PATCH_SIZE, PATCH_SIZE, PATCH_SIZE);
+	recursRender(&baseLeft, 0, PATCH_SIZE, PATCH_SIZE, 0, 0, 0, LEFT);
+	recursRender(&baseRight, PATCH_SIZE, 0, 0, PATCH_SIZE, PATCH_SIZE, PATCH_SIZE, RIGHT);
 	glEnd();
 	// Restore the matrix
 	glPopMatrix();

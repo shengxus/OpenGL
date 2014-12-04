@@ -1,5 +1,5 @@
-#ifndef GRASS_H
-#define GRASS_H
+#ifndef SKY_H
+#define SKY_H
 
 #include "Object.h"
 #include "Global.h"
