@@ -49,8 +49,9 @@ void Sky::generateDome(){
 
 void Sky::render(){
 	glPushMatrix();
-	glTranslatef(0,-20,0);
+	glTranslatef(0,-70,0);
 	glRotatef(270, 1.0f, 0.0f, 0.0f);
+	bindTexture();
 	glBegin(GL_TRIANGLE_STRIP);
 	for (int i = 0; i < vNum; i++){
 		glTexCoord2f(vertices[i].texCoord[U], vertices[i].texCoord[V]);

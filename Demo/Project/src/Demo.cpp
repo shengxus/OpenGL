@@ -32,30 +32,21 @@ void init(){
 	// repeat the pattern when outside the image
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	//sky.loadTexture("data/Sky.png");
-	//sky.bindTexture();
-	//sky.generateDome();
+
+	sky.loadTexture("data/Sky.png");
+	sky.generateDome();
+
 	terrain.init("data/height.raw");
+	terrain.loadTexture("data/land.jpg");
 }
 
 void display(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glPushMatrix();
 	glLoadIdentity();
 	camera.setCamera();
-	//sky.render();
-	/*glDisable(GL_TEXTURE_2D);
-	glColor3f(1,1,1);
-	glBegin(GL_QUADS);
-	
-	glVertex3f(2000, -10, 2000);
-	glVertex3f(-2000, -10, 2000);
-	glVertex3f(-2000, -10, -2000);
-	glVertex3f(2000, -10, -1*2000);
-	glEnd();
-	glEnable(GL_TEXTURE_2D);*/
-	glTranslatef(-((GLfloat)MAP_SIZE * 0.5f), -200.f, -((GLfloat)MAP_SIZE * 0.5f));
-	
+	sky.render();
+	glPushMatrix();
+	glTranslatef(-((GLfloat)MAP_SIZE * 0.5f), -80.f, -((GLfloat)MAP_SIZE * 0.5f));	
 	terrain.reset();
 	terrain.tessellate(camera);
 	terrain.render();

@@ -178,25 +178,16 @@ void Patch::recursRender(TriTreeNode *tri, int leftX, int leftY, int rightX,
 		GLfloat apexZ = heightMap[(apexY *MAP_SIZE) + apexX];
 
 		// Perform polygon coloring based on a height sample
-		float fColor = (60.0f + leftZ) / 256.0f;
-		if (fColor > 1.0f)  fColor = 1.0f;
-
-		glColor3f(fColor, fColor, fColor);
-
+		GLfloat terrainLen = PATCH_SIZE;
+		glTexCoord2f((GLfloat)leftX / terrainLen, (GLfloat)leftY / terrainLen);
 		// Output the LEFT VERTEX for the triangle
 		glVertex3f((GLfloat)leftX, (GLfloat)leftZ, (GLfloat)leftY);
 
-		fColor = (60.0f + rightZ) / 256.0f;
-		if (fColor > 1.0f)  fColor = 1.0f;
-		glColor3f(fColor, fColor, fColor);
-
+		glTexCoord2f((GLfloat)rightX / terrainLen, (GLfloat)rightY / terrainLen);
 		// Output the RIGHT VERTEX for the triangle
 		glVertex3f((GLfloat)rightX, (GLfloat)rightZ, (GLfloat)rightY);
 
-		fColor = (60.0f + apexZ) / 256.0f;
-		if (fColor > 1.0f)  fColor = 1.0f;
-		glColor3f(fColor, fColor, fColor);
-
+		glTexCoord2f((GLfloat)apexX / terrainLen, (GLfloat)apexZ / terrainLen);
 		// Output the APEX VERTEX for the triangle
 		glVertex3f((GLfloat)apexX, (GLfloat)apexZ, (GLfloat)apexY);
 	}
@@ -248,13 +239,6 @@ inline void loadTerrain(char *fileName, unsigned char **dest) {
 	}
 	fread(*dest, sizeof(char), MAP_SIZE * MAP_SIZE, fp);
 	fclose(fp);
-	fp = fopen("out.txt", "w");
-	for (int i = 0; i < MAP_SIZE*MAP_SIZE; i++) {
-		fprintf(fp, "%d ", dest[0][i]);
-		if (i != 0 && i%MAP_SIZE == 0)
-			fprintf(fp, "\r\n");
-	}
-	fclose(fp);
 	// Copy the last row of the height map into the extra first row.
 	memcpy(gHeightMaster, gHeightMaster + MAP_SIZE * MAP_SIZE, MAP_SIZE);
 	// Copy the first row of the height map into the extra last row.
@@ -285,6 +269,7 @@ void Terrain::tessellate(const Camera &camera) {
 void Terrain::render() {
 	Patch *patch = patches[0];
 	// Scale the terrain by the terrain scale specified at compile time.
+	bindTexture();
 	glScalef(1.0f, SCALE, 1.0f);
 	for (int nCount = 0; nCount < PATCHES_NUM*PATCHES_NUM; nCount++, patch++){
 		patch->render();
